@@ -21,7 +21,6 @@ I don't like writing tests. But in a team with multiple people, I need assurance
 - **Environment Validation**: Detects when environments differ between team members
 - **Log Normalization**: Built-in normalization of timestamps, memory addresses, and other variable content
 - **Flexible Matching**: Include/exclude patterns for files and functions
-- **Parallel Execution**: CUDA-aware multiprocessing for performance
 - **CLI Interface**: Easy command-line testing
 - **Extensible**: Custom log replacement rules for any output format
 
@@ -682,13 +681,6 @@ add_log_replacement(replacements, custom)
 
 *Building on defaults with custom replacements*
 
-## Contributing
-
-We welcome contributions! Please see our contributing guidelines for details.
-
-## License
-
-MIT License - see LICENSE file for details.
 
 ---
 
