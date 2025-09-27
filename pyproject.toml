@@ -27,7 +27,7 @@ name = "difflogtest"
 readme = "README.md"
 requires-python = ">=3.10"
 scripts = {"run-unittests" = "difflogtest.cli:entrypoint"}
-version = "0.1.0"
+version = "0.0.1"
 
 [tool.pydantic-mypy]
 init_forbid_extra = true
