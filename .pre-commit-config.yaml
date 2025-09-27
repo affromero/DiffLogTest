@@ -15,7 +15,7 @@ repos:
             exclude: unittest_logs/
 
           - id: end-of-file-fixer
-            exclude: unittest_logs/
+            exclude: unittest_logs/|assets/
 
           - id: mixed-line-ending
             args: [--fix, lf]

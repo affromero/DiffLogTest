@@ -7,7 +7,7 @@
 A unittest framework for reproducible testing across team environments. Ensures that all team members get identical outputs and logs, detecting environment inconsistencies or unintended code changes.
 
 <p align="center">
-  <img src="assets/DiffLogTest.svg" alt="difflogtest logo" width="700"/>
+  <img src="assets/DiffLogTest.svg" alt="difflogtest logo"/>
 </p>
 
 ## Core Philosophy
