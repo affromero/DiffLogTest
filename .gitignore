@@ -1,0 +1,27 @@
+
+# Pretrained Torch
+pretrained_models/
+
+# PyCache
+__pycache__
+
+# VSCode
+*.code-workspace
+
+# Small Data/Videos
+small_data/
+data/
+*.zip
+
+# Outputs
+outputs/
+logs/
+log/
+.DS_Store
+
+# builds
+build/
+dist/
+.venv/
+*.tar.gz
+*.tar
