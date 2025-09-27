@@ -9,7 +9,9 @@ dev = ["pre-commit>=4.0.1,<5"]
 authors = [{email = "me@afromero.co", name = "Andres"}]
 dependencies = [
   "GitPython>=3.1.0",
+  "beartype>=0.21.0",
   "dotenv>=0.9.9",
+  "jaxtyping>=0.3.2",
   "json5>=0.10.0",
   "natsort>=8.4.0",
   "pip>=25.2",
