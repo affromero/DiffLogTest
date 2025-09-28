@@ -57,7 +57,7 @@ def test_my_function():
     logger.success("Computation completed successfully")
     logger.info(f"Result shape: {result.shape}")
 
-    return result  # This output will be compared with logged expectations
+    return result
 
 def my_complex_function():
     """Helper function that also logs.
