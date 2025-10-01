@@ -81,7 +81,7 @@ class LogReplacement:
             # UUID hashes
             cls(
                 name="uuid_hash",
-                pattern=r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b",
+                pattern=r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})",
                 replacement="<UUID_HASH>",
                 use_regex=True,
             ),
