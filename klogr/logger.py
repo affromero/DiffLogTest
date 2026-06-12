@@ -138,7 +138,13 @@ def override_from_dotenv(
     def decorator(func: Callable[..., Any]) -> Callable[..., Any]:
         def wrapper(self: LoggingRich, *args: Any, **kwargs: Any) -> Any:
             # Check if the environment variable exists and has a value
-            env_value = dotenv.get_key(dotenv.find_dotenv(), env_var_name)
+            env_value = os.getenv(env_var_name)
+            if env_value is None:
+                dotenv_file = dotenv.find_dotenv(usecwd=True)
+                if dotenv_file:
+                    env_value = dotenv.dotenv_values(dotenv_file).get(
+                        env_var_name
+                    )
             if env_value and env_value.strip():
                 name = env_var_name.split("_")[1].lower()
                 if name not in self.verbosity:
