@@ -15,7 +15,6 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, TextIO
 
 import dotenv
-from dotenv import load_dotenv
 from pydantic import ConfigDict
 from pydantic.dataclasses import dataclass
 from rich import progress
@@ -33,7 +32,23 @@ if TYPE_CHECKING:
 
     _T = TypeVar("_T")
 
-load_dotenv()
+SECRET_PLACEHOLDERS = {"INFISICAL", "AWS-SECRET"}
+
+
+def _load_non_secret_dotenv() -> None:
+    """Load logging config while leaving credential placeholders untouched."""
+    dotenv_file = dotenv.find_dotenv(usecwd=True)
+    if not dotenv_file:
+        return
+    for key, raw_value in dotenv.dotenv_values(dotenv_file).items():
+        if raw_value is None:
+            continue
+        if raw_value.strip().upper() in SECRET_PLACEHOLDERS:
+            continue
+        os.environ.setdefault(key, raw_value)
+
+
+_load_non_secret_dotenv()
 DISABLE_LOGGING = os.getenv("DISABLE_LOGGING", "False") == "True"
 LOG_DEBUG = os.getenv("LOG_DEBUG", "False") == "True"
 LOG_WARNING = os.getenv("LOG_WARNING", "True") == "True"
