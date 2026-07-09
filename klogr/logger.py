@@ -750,7 +750,12 @@ class LoggingRich:
 
     def temporal_file_logger(self, **kwargs: Any) -> None:
         """Create a temporary file with a .log extension and initialize a console object with it."""
-        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".log")
+        temp_file = tempfile.NamedTemporaryFile(
+            delete=False,
+            encoding="utf-8",
+            mode="w",
+            suffix=".log",
+        )
         self.console = Console(file=temp_file, **kwargs)
 
     def enable_dual_output(self, file_path: str | Path, **kwargs: Any) -> None:

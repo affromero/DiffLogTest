@@ -5,6 +5,15 @@ All notable changes to klogr are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] — 2026-07-09
+
+### Fixed
+
+- Ship PEP 561 typing metadata (`py.typed`) and a top-level
+  `klogr.__init__` stub that re-exports the public API. Installed
+  consumers no longer need local mypy overlay stubs to use `get_logger`
+  and related exports with strict type checking.
+
 ## [0.2.0] — 2026-05-17
 
 Minor bump: four new methods on `LoggingRich`, all built around the
